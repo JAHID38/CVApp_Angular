@@ -2,6 +2,14 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.0.
 
+1. Initialize the angular CV_App (directory name: cv) project with ng serve --o
+2. Open on http://localhost:4200
+3. User will be created on "user" role based
+4. Sign up, Login is done
+5. Personal details is done with registration and retrieve
+6. If finding any bug/err/unknown resource URL, please "logout" and login again.
+
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
