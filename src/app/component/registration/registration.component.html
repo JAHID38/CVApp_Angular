@@ -1,0 +1,17 @@
+<div class="container">
+
+    <h3>User Registration</h3>
+    <div class="container">
+        <h3 *ngIf="message" class="alert alert-success">{{message}}</h3>
+    </div>
+    <form class="form-group">
+        <label>Username</label>
+        <input class="form-control" type="text" required [(ngModel)]="personalObj.username" name="username"><br>
+
+        <label>Password</label>
+        <input class="form-control" type="password" required [(ngModel)]="personalObj.password" name="password"><br>
+
+        <button class="btn btn-info" (click)="addUser()">Sign Up</button>
+
+    </form>
+</div>

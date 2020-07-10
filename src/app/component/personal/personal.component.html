@@ -1,0 +1,61 @@
+<!-- 
+	<div class="container">
+		<ul class="nav nav-pills">
+			<li class="nav-item">
+				<a class="nav-link active" routerLink="/home/{{role}}/{{id}}">Home</a>
+			</li>
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">CV Registration</a>
+				<div class="dropdown-menu">
+					<a class="dropdown-item" routerLink="/{{role}}/{{id}}/personal">Personal Information</a>
+					<a class="dropdown-item" routerLink="/{{role}}/{{id}}/education">Education Qualification</a>
+                    <a class="dropdown-item" routerLink="/{{role}}/{{id}}/contact">Contact</a>
+                    <a class="dropdown-item" routerLink="/{{role}}/{{id}}/language">Language Proficiency</a>
+                    <a class="dropdown-item" routerLink="/{{role}}/{{id}}/skill">Technical Skill</a>
+                    <a class="dropdown-item" routerLink="/{{role}}/{{id}}/project">Projects</a>
+				</div>
+			</li>
+
+		</ul>
+	</div> -->
+
+
+
+
+<!-- Copyright 2018 Google Inc. All Rights Reserved.
+    Use of this source code is governed by an MIT-style license that
+    can be found in the LICENSE file at http://angular.io/license -->
+<div class="container">
+
+    {{user.role}}<br>{{user.userId}}
+
+    <h3>Personal Details</h3>
+    <div class="container">
+        <h3 *ngIf="message" class="alert alert-success">{{message}}</h3>
+    </div>
+    <form class="form-group">
+        <label>First Name</label>
+        <input class="form-control" type="text" required [(ngModel)]="personalObj.firstName" name="firstName"><br>
+
+        <label>Last Name</label>
+        <input class="form-control" type="text" required [(ngModel)]="personalObj.lastName" name="lastName"><br>
+
+        <label>Father's Name</label>
+        <input class="form-control" type="text" required [(ngModel)]="personalObj.fatherName" name="fatherName"><br>
+
+        <label>Mother's Name</label>
+        <input class="form-control" type="text" required [(ngModel)]="personalObj.motherName" name="motherName"><br>
+
+        <label>Gender</label>
+        <select class="form-control" [(ngModel)]="personalObj.gender" name="gender">
+            <option>Female</option>
+            <option>Male</option>
+        </select><br>
+
+        <label>Date of Birth</label>
+        <input class="form-control" type="date" required [(ngModel)]="personalObj.dob" name="dob"><br>
+
+        <button class="btn btn-info" (click)="addPersonal()">Add Personal Details</button>
+
+    </form>
+</div>

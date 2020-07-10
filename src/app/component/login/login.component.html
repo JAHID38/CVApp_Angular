@@ -1,0 +1,34 @@
+
+<table align="center">
+    
+    <h3 class="text-danger" *ngIf='errMessage'>{{errMessage}}</h3>
+    <thead>
+        <tr>
+            <th><h2>Login</h2></th>
+        </tr>
+        <tr>
+            <th>Username</th>
+            <th>
+                <input type="text" [(ngModel)]="user.username">
+            </th>
+        </tr>
+        <tr>
+            <th>Password</th>
+            <th>
+                <input type="password" [(ngModel)]="user.password">
+            </th>
+        </tr>
+        <tr>
+            <th></th>
+            <!-- <td></td> -->
+            <th>
+                <button (click)=loginMethod() class="btn btn-success">Sign-in</button>
+            </th>
+        </tr>
+        <tr>
+            <th>Don't have any account?</th>
+            <th><a routerLink="/registration">Sign Up</a> here</th>
+        </tr>
+    </thead>
+</table>
+
