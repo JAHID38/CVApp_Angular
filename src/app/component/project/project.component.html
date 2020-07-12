@@ -1,30 +1,17 @@
-<!-- <div class="container">
-    <ul class="nav nav-pills">
-        <li class="nav-item">
-            <a class="nav-link active" href="#">Home</a>
-        </li>
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">CV Registration</a>
-            <div class="dropdown-menu">
-                <a class="dropdown-item" routerLink="/personal">Personal Information</a>
-                <a class="dropdown-item" routerLink="/education">Education Qualification</a>
-                <a class="dropdown-item" routerLink="/contact">Contact</a>
-                <a class="dropdown-item" routerLink="/language">Language Proficiency</a>
-                <a class="dropdown-item" routerLink="/skill">Technical Skill</a>
-                <a class="dropdown-item" routerLink="/project">Projects</a>
-            </div>
-        </li>
-    </ul>
-</div> -->
+<!--  -->
 
  <div class="container">
     <h3>Project</h3>
+    <h3 *ngIf="message" class="alert alert-success">{{message}}</h3>
 
     <label>Project Name</label>
-    <input   class="form-control" type="text" required><br>
+    <input   class="form-control" type="text" required
+    [(ngModel)]="project.projectName" name="projectName"><br>
     <label>Description</label>
-    <input  class="form-control" type="text" required><br>
+    <input  class="form-control" type="text" required
+    [(ngModel)]="project.description" name="description"><br>
     <label>Link</label>
-    <input  class="form-control" type="text" required><br>
-    <button class="btn btn-info">Add  Project</button>
+    <input  class="form-control" type="text" required
+    [(ngModel)]="project.link" name="link"><br>
+    <button class="btn btn-info" (click)="addProject()">Add  Project</button>
 </div>

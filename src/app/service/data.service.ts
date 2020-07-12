@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { User, PersonalClass } from '../Model';
+import { User, PersonalClass, ContactClass } from '../Model';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -11,6 +11,11 @@ export class DataService {
   createUserUrl = "http://localhost:8080/userRegister"
   loginUrl = "http://localhost:8080/signin"
   savePersonal = "http://localhost:8080/register/personal"
+  saveEducation = "http://localhost:8080/register/education"
+  saveContact = "http://localhost:8080/register/contact"
+  saveSkill = "http://localhost:8080/register/skill"
+  saveLanguage = "http://localhost:8080/register/language"
+  saveProject = "http://localhost:8080/register/project"
 
 
   constructor(private http: HttpClient) { }
@@ -29,11 +34,52 @@ export class DataService {
     {responseType:'text' as 'json'});
   }
 
-  // public getPersonalRemote(id){
-  //   return this.http.get(`http://localhost:8080/${id}/view/userProfile`)
-  // }
+  public saveContactRemote(contact){
+    return this.http.post(this.saveContact, contact,
+    {responseType:'text' as 'json'});
+  }
+
+  public saveEducationRemote(education){
+    return this.http.post(this.saveEducation, education,
+    {responseType:'text' as 'json'});
+  }
+
+  public saveLanguageRemote(education){
+    return this.http.post(this.saveLanguage, education,
+    {responseType:'text' as 'json'});
+  }
+
+  public saveSkillRemote(education){
+    return this.http.post(this.saveSkill, education,
+    {responseType:'text' as 'json'});
+  }
+
+  public saveProjectRemote(education){
+    return this.http.post(this.saveProject, education,
+    {responseType:'text' as 'json'});
+  }
 
   public getPersonalRemote(user: PersonalClass):Observable<any>{
     return this.http.post<any>(`http://localhost:8080/view/userProfile`, user)
+  }
+
+  public getContactRemote(user: ContactClass):Observable<any>{
+    return this.http.post<any>(`http://localhost:8080/view/userContact`, user)
+  }
+
+  public getEducationRemote(userId){
+    return this.http.get(`http://localhost:8080/${userId}/view/education`)
+  }
+
+  public getLanguageRemote(userId){
+    return this.http.get(`http://localhost:8080/${userId}/view/language`)
+  }
+
+  public getSkillRemote(userId){
+    return this.http.get(`http://localhost:8080/${userId}/view/skill`)
+  }
+
+  public getProjectRemote(userId){
+    return this.http.get(`http://localhost:8080/${userId}/view/project`)
   }
 }

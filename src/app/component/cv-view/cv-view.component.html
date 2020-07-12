@@ -1,6 +1,11 @@
 <div class="container">
+    <h1 align="center">RESUME OF {{person.firstName.toUpperCase()}} {{person.lastName.toUpperCase()}}</h1>
+</div>
+<br>
+<br>
+<div class="container">
 
-    <h2>Personal Details</h2>
+    <h2>Personal Details</h2><hr>
     <div class="container">
     <label class="col-6">Name</label>
     <label class="col-6">{{person.firstName}} {{person.lastName}}</label><br>
@@ -15,5 +20,81 @@
     <label class="col-6">{{person.motherName}}</label><br>
 
     <label class="col-6">Date of Birth</label>
-    <label class="col-6">{{person.dob}}</label><br>
+    <label class="col-6">{{person.dob |date}}</label><br>
+</div>
+
+<div class="container">
+
+    <h2>Contact Details</h2><hr>
+    <div class="container">
+    <label class="col-6">Present Address</label>
+    <label class="col-6">{{contact.presentAddress}}</label><br>
+
+    <label class="col-6">Mobile</label>
+    <label class="col-6">{{contact.mobile}}</label><br>
+
+    <label class="col-6">Email</label>
+    <label class="col-6">{{contact.email}}</label><br>
+
+    <label class="col-6">Website</label>
+    <label class="col-6"><a href="{{contact.website}}" target="_blank">
+        {{contact.website}}</a></label><br>
+
+</div>
+
+<div class="container">
+    <h2>Educational Qualification</h2><hr>
+    <table class="table table-striped table-active">
+        <thead class="thead-dark">
+            <th>Institution Name</th>
+            <th>Education Level</th>
+            <th>Major</th>
+            <th>Passing Year</th>
+            <th>GPA</th>
+        </thead>
+        <tbody>
+            <tr *ngFor = 'let e of eduObj'>
+                <td>{{e.institute}}</td>
+                <td>{{e.degree}}</td>
+                <td>{{e.major}}</td>
+                <td>{{e.passingYear}}</td>
+                <td>{{e.gpa}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<div class="container">
+    <h2>Language Proficiency</h2><hr>
+    <ul *ngFor='let u of languageObj'>
+        <li>{{u.language}}</li>        
+    </ul>
+</div>
+
+
+<div class="container">
+    <h2>Technical Skills</h2><hr>
+    <ul *ngFor='let u of skillObj'>
+        <li>{{u.skill}}</li>        
+    </ul>
+</div>
+
+
+<div class="container">
+    <h2>Projects</h2><hr>
+    <table class="table table-striped table-active">
+        <thead class="thead-dark">
+            <th>Project Name</th>
+            <th>Description</th>
+            <th>Link</th>
+        </thead>
+        <tbody>
+            <tr *ngFor = 'let e of projectObj'>
+                <td>{{e.projectName}}</td>
+                <td>{{e.description}}</td>
+                <td><a href="{{e.link}}" target="_blank">{{e.link}}</a></td>
+            </tr>
+        </tbody>
+    </table>
 </div>

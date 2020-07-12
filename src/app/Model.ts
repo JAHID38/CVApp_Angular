@@ -32,7 +32,7 @@ export class ContactClass{
     
     email: string;
     mobile: string;
-    presendAddress: string;
+    presentAddress: string;
     userId: number;
     website: string;
 }
